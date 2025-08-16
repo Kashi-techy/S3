@@ -50,3 +50,9 @@ int main() {
     return 0;
 }
 
+/*
+OUTPUT
+Enter the number of elements: 5
+Enter 5 elements : 85 92 36 47 66
+The Sorted Array is : 36 47 66 85 92 
+*/
