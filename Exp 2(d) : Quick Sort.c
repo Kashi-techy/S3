@@ -51,3 +51,10 @@ int main() {
     printArray(arr, n);
     return 0;
 }
+
+/* OUTPUT
+
+Enter the number of elements : 6
+Enter 6 elements : 78 92 61 34 28 98
+The Sorted Array is : 28 34 61 78 92 98 
+*/
