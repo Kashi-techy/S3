@@ -7,9 +7,11 @@ typedef struct
 
 void inputPoly(term p[], int n, char name){
     printf("Enter %d coefficients of %c(x): ",n,name);
-    for(int i=0;i<n;i++) scanf("%d",&p[i].coeff);
+    for(int i=0;i<n;i++) 
+        scanf("%d",&p[i].coeff);
     printf("Enter %d exponents of %c(x): ",n,name);
-    for(int i=0;i<n;i++) scanf("%d",&p[i].exp);
+    for(int i=0;i<n;i++) 
+        scanf("%d",&p[i].exp);
 }
 
 int addPoly(term p[], int n1, term q[], int n2, term r[]){ 
@@ -51,4 +53,16 @@ int main(){
     printPoly(r,k,'R');
 }
 
+/*
+OUTPUT
+No. of terms in P(x) and Q(x): 3 4
+Enter 3 coefficients of P(x): 7 8 5
+Enter 3 exponents of P(x): 2 1 0
+Enter 4 coefficients of Q(x): 14 9 6 7
+Enter 4 exponents of Q(x): 3 2 1 0
+
+P(x) = 7x^2 + 8x^1 + 5x^0
+Q(x) = 14x^3 + 9x^2 + 6x^1 + 7x^0
+Resultant Polynomial R(x) = 14x^3 + 16x^2 + 14x^1 + 12x^0
+*/
 
