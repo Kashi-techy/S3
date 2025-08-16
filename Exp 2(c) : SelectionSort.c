@@ -42,3 +42,9 @@ int main() {
     printArray(arr, n);
     return 0;
 }
+
+OUTPUT
+
+Enter the number of elements : 5
+Enter 5 elements : 87 56 24 98 19
+The Sorted Array is : 19 24 56 87 98 
