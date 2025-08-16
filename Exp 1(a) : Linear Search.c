@@ -1,3 +1,15 @@
+/*ALGORITHM 
+1. Start.
+2. Input the number of elements n.
+3. Input the array arr[0..n-1].
+4. Input the search key key.
+5. Initialize index variable i = 0.
+6. Repeat until i < n:
+   a. If arr[i] == key, then
+     Return i (key found at index i).
+   b. Otherwise, increment i by 1.
+7. If end of array is reached without finding key, return -1.
+8. Stop */
 #include <stdio.h>
 
 int linearSearch(int arr[],int n,int key) {
