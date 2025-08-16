@@ -1,3 +1,16 @@
+/*ALGORITHM
+1. Start.
+2. Input the number of elements n.
+3. Input the sorted array arr[0..n-1].
+4. Input the search key key.
+5. Initialize low = 0, high = n-1.
+6. Repeat until low <= high:
+   a. Compute mid = (low + high) / 2.
+   b. If arr[mid] == key, return mid (key found at index mid).
+   c. Else if key < arr[mid], set high = mid - 1 (search left half).
+   d. Else, set low = mid + 1 (search right half).
+7. If low > high, return -1 (key not found).
+8. Stop.*/
 #include <stdio.h>
 
 // Recursive binary search function
