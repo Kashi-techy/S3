@@ -38,3 +38,11 @@ int main() {
     return 0;
 }
 
+/* OUTPUT
+
+Enter the number of elements : 5
+Enter 5 elements in SORTED order : 12 27 56 68 95
+Enter the key to be searched : 68
+Key found at Index [3].
+
+*/
