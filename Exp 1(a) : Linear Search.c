@@ -30,3 +30,11 @@ int main() {
 
     return 0;
 }
+
+/* OUTPUT
+
+Enter the number of elements : 5
+Enter 5 elements : 98 47 56 23 31
+Enter the key to be searched : 31
+Key FOUND at Index [4]
+*/
