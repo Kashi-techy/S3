@@ -12,7 +12,8 @@ void readSparse(struct Element mat[], int n, const char *name){
 }
 
 void printSparse(struct Element mat[], int size, const char *name){
-    printf("\n%s in Triplet Form:\nRow Col Value\n", name);
+    printf("\n%s in Triplet Form:\n", name);
+    printf("%d %d %d\n", rows, cols, size)
     for (int i = 0; i < size; i++)
         printf("%3d %3d %5d\n", mat[i].row, mat[i].col, mat[i].value);
 }
