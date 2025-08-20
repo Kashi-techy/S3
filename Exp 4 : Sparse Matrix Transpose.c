@@ -16,7 +16,7 @@ void swap(int *a, int *b)
 
 int main() 
 {
-    int rows, cols, no_nonzero;
+    int rows,cols,no_nonzero;
 
     printf("Enter the no of rows : ");
     scanf("%d", &rows);
@@ -50,12 +50,11 @@ int main()
     }
 
     printf("\nTransposed Sparse Matrix in Triplet form:\n");
-    printf("Row Column Value\n");
+    printf("%d %d %d\n", cols, rows, no_nonzero);
     for (int i = 0; i < no_nonzero; i++) 
-        printf("%3d %6d %5d\n", transposed[i].row, transposed[i].col, transposed[i].value);
+        printf("%d %d %d\n", transposed[i].row, transposed[i].col, transposed[i].value);
     return 0;
 }
-
 
 /*OUTPUT :
 Enter the no of rows : 3 
