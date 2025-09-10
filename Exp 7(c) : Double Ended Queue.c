@@ -107,4 +107,70 @@ int main() {
         }
     } while(1);
 }
+/*OUTPUT
+1.InsertFront
+2.InsertRear
+ 3.DeleteFront
+ 4.DeleteRear
+ 5.Display
+ 6.Exit
+Choice: 1
+Enter item: 7        
+7 inserted at front
 
+1.InsertFront
+2.InsertRear
+ 3.DeleteFront
+ 4.DeleteRear
+ 5.Display
+ 6.Exit
+Choice: 1
+Enter item: 5
+5 inserted at front
+
+1.InsertFront
+2.InsertRear
+ 3.DeleteFront
+ 4.DeleteRear
+ 5.Display
+ 6.Exit
+Choice: 1   
+Enter item: 8
+8 inserted at front
+
+1.InsertFront
+2.InsertRear
+ 3.DeleteFront
+ 4.DeleteRear
+ 5.Display
+ 6.Exit
+Choice: 1
+Enter item: 6
+6 inserted at front
+
+1.InsertFront
+2.InsertRear
+ 3.DeleteFront
+ 4.DeleteRear
+ 5.Display
+ 6.Exit
+Choice: 5
+Deque elements: 6 8 5 7 
+
+1.InsertFront
+2.InsertRear
+ 3.DeleteFront
+ 4.DeleteRear
+ 5.Display
+ 6.Exit
+Choice: 3
+Deleted front: 6
+
+1.InsertFront
+2.InsertRear
+ 3.DeleteFront
+ 4.DeleteRear
+ 5.Display
+ 6.Exit
+Choice: 6
+*/
