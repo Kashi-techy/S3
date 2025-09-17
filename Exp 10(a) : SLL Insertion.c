@@ -14,6 +14,21 @@ void insertatFrnt( int value){
  	printf("value added");
 }
 
+void insertatend( int value){
+ 	struct node *newnode=(struct node*)malloc(sizeof(struct node));
+ 	newnode -> data=value;
+ 	newnode->next=NULL;
+       if(head==null){
+                head=newnode;
+       	return;
+       }
+ 	printf("value added");
+ 	struct node *temp=head;
+ 	while(temp->next != NULL)
+ 		temp=temp->next;
+ 	temp->next=newnode;
+}
+
 void display(){
 	struct node *temp=head;
 	while (temp!=NULL){
