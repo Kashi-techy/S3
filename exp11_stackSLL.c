@@ -91,3 +91,42 @@ int main() {
     }
     return 0;
 }
+/* o/p
+    --- Stack Menu ---
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 1
+Enter the data to push: 37
+Stack: TOP -> 37 -> NULL
+
+--- Stack Menu ---
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 1 
+Enter the data to push: 39
+Stack: TOP -> 39 -> 37 -> NULL
+
+--- Stack Menu ---
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 1
+Enter the data to push: 35
+Stack: TOP -> 35 -> 39 -> 37 -> NULL
+
+--- Stack Menu ---
+1. Push
+2. Pop
+3. Display
+4. Exit
+Enter your choice: 2
+Popped value is: 35
+Stack: TOP -> 39 -> 37 -> NULL
+
+*/
+    
