@@ -112,3 +112,48 @@ int main() {
     }
     return 0;
 }
+/*o/p
+    --- Queue Menu ---
+    1. Enqueue (Add)
+    2. Dequeue (Remove)
+    3. Display
+    4. Exit
+    Enter your choice: 1
+    Enter the data to enqueue: 45
+    Queue: FRONT -> 45 -> NULL
+    
+    --- Queue Menu ---
+    1. Enqueue (Add)
+    2. Dequeue (Remove)
+    3. Display
+    4. Exit
+    Enter your choice: 1 
+    Enter the data to enqueue: 89
+    Queue: FRONT -> 45 -> 89 -> NULL
+    
+    --- Queue Menu ---
+    1. Enqueue (Add)
+    2. Dequeue (Remove)
+    3. Display
+    4. Exit
+    Enter your choice: 1
+    Enter the data to enqueue: 78
+    Queue: FRONT -> 45 -> 89 -> 78 -> NULL
+    
+    --- Queue Menu ---
+    1. Enqueue (Add)
+    2. Dequeue (Remove)
+    3. Display
+    4. Exit
+    Enter your choice: 2
+    Dequeued value is: 45
+    Queue: FRONT -> 89 -> 78 -> NULL
+    
+    --- Queue Menu ---
+    1. Enqueue (Add)
+    2. Dequeue (Remove)
+    3. Display
+    4. Exit
+    Enter your choice: 3
+    Queue: FRONT -> 89 -> 78 -> NULL
+*/
