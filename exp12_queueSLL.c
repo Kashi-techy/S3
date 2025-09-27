@@ -1,93 +1,83 @@
-#include <stdio.h>
+#include<stdio.h>
+#include<conio.h>
 #include <stdlib.h>
-
-// Define the Node structure for the stack
-struct Node {
+struct Node
+{
     int data;
     struct Node *next;
-};
-
-// Global 'top' pointer, initialized to NULL for an empty stack
-struct Node *top = NULL;
-
-// Function to add an element to the top of the stack
-void push(int value) {
-    struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
-    if (newNode == NULL) {
-        printf("Heap overflow\n");
-        return;
+}*front=NULL,*rear=NULL;
+void enqueue()
+{
+    struct Node *newnode=(struct Node*)malloc(sizeof(struct Node));
+    printf("Enter data:");
+    scanf("%d",&newnode->data);
+    newnode->next=NULL;
+    if(front==NULL)
+    {
+    front=newnode;
+    rear=newnode;
     }
-    newNode->data = value;
-    newNode->next = top;
-    top = newNode;
-}
-
-// Function to remove and return the top element of the stack
-int pop() {
-    if (top == NULL) {
-        // No need to print here, can be handled in main
-        return -1; // Indicate stack underflow
+    else
+    {
+    rear->next=newnode;
+    rear=newnode;
     }
-    struct Node* temp = top;
-    int poppedValue = top->data;
-    top = top->next;
+    }
+int dequeue()
+{
+    if (front==NULL)
+    {printf("Queue is empty...underflow");return -1;}
+    else
+    {
+    struct Node *temp;
+    temp=front;
+    int rv=front->data;
+    front=front->next;
+    if(front==NULL) rear=NULL;
     free(temp);
-    return poppedValue;
-}
-
-// Function to display all elements in the stack
-void displayStack() {
-    if (top == NULL) {
-        printf("Stack is empty.\n");
-    } else {
-        struct Node* temp = top;
-        printf("Stack: TOP -> ");
-        while (temp != NULL) {
-            printf("%d -> ", temp->data);
-            temp = temp->next;
-        }
-        printf("NULL\n");
+    return(rv);
     }
 }
-
-// Main function to drive the menu
-int main() {
-    int ch, data, poppedValue;
-
-    while (1) {
-        printf("\n--- Stack Menu ---\n");
-        printf("1. Push\n");
-        printf("2. Pop\n");
-        printf("3. Display\n");
-        printf("4. Exit\n");
-        printf("Enter your choice: ");
-        scanf("%d", &ch);
-
-        switch (ch) {
-            case 1:
-                printf("Enter the data to push: ");
-                scanf("%d", &data);
-                push(data);
-                displayStack();
-                break;
-            case 2:
-                poppedValue = pop();
-                if (poppedValue == -1) {
-                    printf("Stack underflow: Cannot pop from an empty stack.\n");
-                } else {
-                    printf("Popped value is: %d\n", poppedValue);
-                }
-                displayStack();
-                break;
-            case 3:
-                displayStack();
-                break;
-            case 4:
-                printf("Exiting...\n");
-                exit(0);
-            default:
-                printf("Invalid choice. Please try again.\n");
-        }
+void displayQ()
+{
+    struct Node *temp=front;
+    while(temp!=NULL)
+    {
+    printf(" %d---->",temp->data);
+    temp=temp->next;
     }
-    return 0;
+    printf(" NULL");
+}
+void main()
+{
+    int ch;
+
+do
+{
+printf("\nMenu\n----\n1.Enqueue\n2.Dequeue\n3.Display\n4.Exit");
+printf("\nEnter the choice:");
+scanf("%d",&ch);
+switch(ch)
+{
+case 1:
+    enqueue();
+    displayQ();
+    break;
+case 2:
+    int data;
+    data=dequeue();
+    if(data!=-1)
+        printf("The dequed data is:%d\n",data);
+    displayQ();
+    break;
+case 3:
+    displayQ();
+    break;
+case 4:
+    exit(0);
+default:
+    printf("There is no such operation:");
+    }
+  }
+while(1);
 }
