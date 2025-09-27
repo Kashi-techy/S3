@@ -169,3 +169,41 @@ int main() {
     }
     return 0;
 }
+/*
+o/p 
+    -- Linked List Menu ---
+    1. Insert at Beginning
+    2. Insert at End
+    3. Insert at Position
+    4. Delete at Beginning
+    5. Delete at End
+    6. Delete at Position
+    7. Display List
+    8. Exit
+    Enter your choice: 1
+    Enter value: 7
+    
+    --- Linked List Menu ---
+    1. Insert at Beginning
+    2. Insert at End
+    3. Insert at Position
+    4. Delete at Beginning
+    5. Delete at End
+    6. Delete at Position
+    7. Display List
+    8. Exit
+    Enter your choice: 1
+    Enter value: 8
+    
+    --- Linked List Menu ---
+    1. Insert at Beginning
+    2. Insert at End
+    3. Insert at Position
+    4. Delete at Beginning
+    5. Delete at End
+    6. Delete at Position
+    7. Display List
+    8. Exit
+    Enter your choice: 7
+    List: 8 -> 7 -> 45 -> NULL
+*/
