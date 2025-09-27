@@ -1,80 +1,93 @@
-#include<stdio.h>
-#include<conio.h>
+#include <stdio.h>
 #include <stdlib.h>
-struct Node
-{
- int data;
- struct Node *next;
-};
-struct Node *top=NULL;
 
+// Define the Node structure for the stack
+struct Node {
+    int data;
+    struct Node *next;
+};
+
+// Global 'top' pointer, initialized to NULL for an empty stack
+struct Node *top = NULL;
+
+// Function to add an element to the top of the stack
 void push(int value) {
     struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+    if (newNode == NULL) {
+        printf("Heap overflow\n");
+        return;
+    }
     newNode->data = value;
     newNode->next = top;
     top = newNode;
 }
 
+// Function to remove and return the top element of the stack
 int pop() {
     if (top == NULL) {
-        printf("Stack is empty.\n");
-        return -1;  // or any value to indicate an error
+        // No need to print here, can be handled in main
+        return -1; // Indicate stack underflow
     }
-
-    int poppedValue = top->data;
     struct Node* temp = top;
+    int poppedValue = top->data;
     top = top->next;
     free(temp);
-
     return poppedValue;
 }
 
+// Function to display all elements in the stack
 void displayStack() {
     if (top == NULL) {
         printf("Stack is empty.\n");
     } else {
         struct Node* temp = top;
-        printf("Stack content:\n");
+        printf("Stack: TOP -> ");
         while (temp != NULL) {
-            printf("%d-->", temp->data);
+            printf("%d -> ", temp->data);
             temp = temp->next;
         }
         printf("NULL\n");
     }
 }
-void main()
-{
- int ch;
- 
- do
- {
-  printf("\nMenu\n----\n1. Push\n2. Pop\n3.display\n4. Exit");
-  printf("\nEnter the choice:");
-  scanf("%d",&ch);
-  switch(ch)
-  {
-   case 1:
-        printf("Enter the data to push:");
-        int data;
-        scanf("%d",&data);
-        push(data);
-        displayStack();
-        break;
-   case 2:
-        int rv;
-        rv=pop();
-        if(rv!=-1) printf("Popped Value is:%d\n",rv);
-        displayStack();
-        break;
-   case 3:
-        displayStack();
-        break;
-   case 4:
-        exit(0);
-   default:
-        printf("There is no such operation:");
-  }
- }
- while(1);
-}
 
+// Main function to drive the menu
+int main() {
+    int ch, data, poppedValue;
+
+    while (1) {
+        printf("\n--- Stack Menu ---\n");
+        printf("1. Push\n");
+        printf("2. Pop\n");
+        printf("3. Display\n");
+        printf("4. Exit\n");
+        printf("Enter your choice: ");
+        scanf("%d", &ch);
+
+        switch (ch) {
+            case 1:
+                printf("Enter the data to push: ");
+                scanf("%d", &data);
+                push(data);
+                displayStack();
+                break;
+            case 2:
+                poppedValue = pop();
+                if (poppedValue == -1) {
+                    printf("Stack underflow: Cannot pop from an empty stack.\n");
+                } else {
+                    printf("Popped value is: %d\n", poppedValue);
+                }
+                displayStack();
+                break;
+            case 3:
+                displayStack();
+                break;
+            case 4:
+                printf("Exiting...\n");
+                exit(0);
+            default:
+                printf("Invalid choice. Please try again.\n");
+        }
+    }
+    return 0;
+}
